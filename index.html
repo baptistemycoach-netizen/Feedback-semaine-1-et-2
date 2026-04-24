@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Retour semaines 1 et 2 – Fondations</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section id="form-screen" class="card" aria-live="polite">
+        <h1>Retour semaines 1 et 2 – Fondations</h1>
+        <p class="intro">
+          Merci d’avoir suivi les deux premières semaines du programme. Tes réponses vont
+          m’aider à améliorer la version définitive. Le questionnaire prend moins de 2
+          minutes.
+        </p>
+
+        <form id="feedback-form" novalidate>
+          <fieldset>
+            <legend>1. Est-ce que tu as réussi à suivre les séances sur les 2 premières semaines ?</legend>
+            <label><input type="radio" name="q1_sessions_followed" value="Toutes les séances" required /> Toutes les séances</label>
+            <label><input type="radio" name="q1_sessions_followed" value="La majorité" /> La majorité</label>
+            <label><input type="radio" name="q1_sessions_followed" value="Quelques-unes" /> Quelques-unes</label>
+            <label><input type="radio" name="q1_sessions_followed" value="Très peu / aucune" /> Très peu / aucune</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>2. Globalement, tu as trouvé les séances :</legend>
+            <label><input type="radio" name="q2_difficulty_global" value="Trop faciles" required /> Trop faciles</label>
+            <label><input type="radio" name="q2_difficulty_global" value="Plutôt faciles" /> Plutôt faciles</label>
+            <label><input type="radio" name="q2_difficulty_global" value="Adaptées" /> Adaptées</label>
+            <label><input type="radio" name="q2_difficulty_global" value="Plutôt difficiles" /> Plutôt difficiles</label>
+            <label><input type="radio" name="q2_difficulty_global" value="Trop difficiles" /> Trop difficiles</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>3. Est-ce que les exercices étaient faciles à comprendre et à suivre ?</legend>
+            <label><input type="radio" name="q3_exercise_clarity" value="Très facile" required /> Très facile</label>
+            <label><input type="radio" name="q3_exercise_clarity" value="Plutôt facile" /> Plutôt facile</label>
+            <label><input type="radio" name="q3_exercise_clarity" value="Moyennement" /> Moyennement</label>
+            <label><input type="radio" name="q3_exercise_clarity" value="Difficile" /> Difficile</label>
+          </fieldset>
+
+          <div class="question-block">
+            <label for="q4_exercise_feedback">
+              <span class="question-title">4. As-tu des retours sur certains exercices (trop faciles, trop difficiles, bon/mauvais ressenti) ?</span>
+            </label>
+            <textarea
+              id="q4_exercise_feedback"
+              name="q4_exercise_feedback"
+              rows="4"
+              required
+              placeholder="Ton retour..."
+            ></textarea>
+          </div>
+
+          <fieldset>
+            <legend>5. Est-ce que tu as ressenti des changements depuis le début ?</legend>
+            <label><input type="radio" name="q5_changes_felt" value="Oui, clairement" required /> Oui, clairement</label>
+            <label><input type="radio" name="q5_changes_felt" value="Oui, un peu" /> Oui, un peu</label>
+            <label><input type="radio" name="q5_changes_felt" value="Pas vraiment" /> Pas vraiment</label>
+            <label><input type="radio" name="q5_changes_felt" value="Pas du tout" /> Pas du tout</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>6. Qu’est-ce qui t’a le plus limité pour suivre le programme ?</legend>
+            <label><input type="radio" name="q6_main_limit" value="Manque de temps" required /> Manque de temps</label>
+            <label><input type="radio" name="q6_main_limit" value="Difficulté des exercices" /> Difficulté des exercices</label>
+            <label><input type="radio" name="q6_main_limit" value="Manque de motivation" /> Manque de motivation</label>
+            <label><input type="radio" name="q6_main_limit" value="Inconfort / raideurs" /> Inconfort / raideurs</label>
+            <label><input type="radio" name="q6_main_limit" value="Rien en particulier" /> Rien en particulier</label>
+            <label><input type="radio" name="q6_main_limit" value="Autre" id="q6-other-option" /> Autre</label>
+          </fieldset>
+
+          <div class="question-block hidden" id="q6-other-wrapper">
+            <label for="q6_other_text">
+              <span class="question-title">Précise “Autre”</span>
+            </label>
+            <input
+              type="text"
+              id="q6_other_text"
+              name="q6_other_text"
+              maxlength="120"
+              placeholder="Ex : contraintes perso"
+            />
+          </div>
+
+          <div class="question-block">
+            <label for="q7_motivation">
+              <span class="question-title">7. Sur 10, à quel point es-tu motivé(e) pour continuer ?</span>
+            </label>
+            <div class="slider-head">
+              <span>1 = pas motivé(e)</span>
+              <strong id="q7_value">5</strong>
+              <span>10 = très motivé(e)</span>
+            </div>
+            <input
+              type="range"
+              id="q7_motivation"
+              name="q7_motivation"
+              min="1"
+              max="10"
+              step="1"
+              value="5"
+              required
+            />
+          </div>
+
+          <div class="question-block">
+            <label for="q8_one_improvement">
+              <span class="question-title">8. Si tu pouvais améliorer une seule chose dans le programme, ce serait quoi ?</span>
+            </label>
+            <input
+              type="text"
+              id="q8_one_improvement"
+              name="q8_one_improvement"
+              required
+              maxlength="180"
+              placeholder="Ton idée en une phrase"
+            />
+          </div>
+
+          <p id="form-error" class="form-error hidden" role="alert"></p>
+
+          <button type="submit" class="submit-btn">Envoyer mes réponses</button>
+        </form>
+      </section>
+
+      <section id="confirmation-screen" class="card hidden" aria-live="polite">
+        <h2>Merci pour ton retour.</h2>
+        <p>
+          Tes réponses vont m’aider à améliorer le programme et à construire une version
+          encore plus adaptée.
+        </p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
